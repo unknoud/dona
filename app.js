@@ -4,7 +4,6 @@
 
   const app = document.getElementById("app");
   const pinScreen = document.getElementById("pinScreen");
-  const openPin = document.getElementById("openPin");
   const logoutButton = document.getElementById("logoutButton");
   const pinDots = [...document.querySelectorAll("#pinDots span")];
   const pinError = document.getElementById("pinError");
@@ -127,12 +126,9 @@
     clearPin(380);
   }
 
-  openPin.addEventListener("click", (event) => {
-    event.stopPropagation();
-    showPin();
-  });
 
-  document.getElementById("lockScreen").addEventListener("click", () => {
+  const lockScreen = document.getElementById("lockScreen");
+  lockScreen.addEventListener("click", () => {
     if (!pinScreen.classList.contains("open")) showPin();
   });
 
@@ -142,17 +138,6 @@
 
   logoutButton.addEventListener("click", lock);
 
-
-  let unlockRevealTimer = null;
-  openPin.addEventListener("mousemove", () => {
-    openPin.classList.add("reveal");
-    clearTimeout(unlockRevealTimer);
-    unlockRevealTimer = setTimeout(() => openPin.classList.remove("reveal"), 1050);
-  });
-  openPin.addEventListener("mouseleave", () => {
-    clearTimeout(unlockRevealTimer);
-    unlockRevealTimer = setTimeout(() => openPin.classList.remove("reveal"), 420);
-  });
 
   pinInput.addEventListener("input", (event) => setPin(event.target.value));
   pinInput.addEventListener("keydown", (event) => {
