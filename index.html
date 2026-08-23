@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090812" />
+  <title>Corna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wallpaper" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+
+  <main id="app" class="locked">
+    <section id="lockScreen" class="screen lock-screen" aria-label="Tela de bloqueio">
+      <div class="lock-top">
+        <div class="brand-pill"><span class="brand-dot"></span>CORNA</div>
+      </div>
+
+      <div class="lock-center">
+        <p class="eyebrow">Bem-vindo de volta</p>
+        <div id="lockTime" class="lock-time">00:00</div>
+        <div id="lockDate" class="lock-date">—</div>
+      </div>
+
+      <div class="lock-bottom">
+        <div class="profile-chip">
+          <div class="profile-avatar"><i class="fa-regular fa-heart"></i></div>
+          <div>
+            <strong>CORNA</strong>
+            <span>195645765</span>
+          </div>
+        </div>
+        <button id="openPin" class="unlock-btn" type="button" aria-label="Desbloquear">
+          <span>Desbloquear</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="pinScreen" class="screen pin-screen" aria-label="Inserir senha" aria-hidden="true">
+      <div class="pin-card">
+        <div class="pin-heart-wrap" aria-hidden="true">
+          <span class="heart-glow"></span>
+          <span class="heart-orbit orbit-a"></span>
+          <span class="heart-orbit orbit-b"></span>
+          <div id="pinHeart" class="pin-heart"><i class="fa-solid fa-heart"></i></div>
+          <span class="heart-spark spark-1"></span>
+          <span class="heart-spark spark-2"></span>
+          <span class="heart-spark spark-3"></span>
+        </div>
+        <div id="pinDots" class="pin-dots" aria-label="Senha de quatro dígitos">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p class="pin-instruction">Digite a senha</p>
+        <p id="pinError" class="pin-error" role="alert">Senha incorreta</p>
+
+        <input id="pinInput" class="pin-hidden-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Senha de quatro dígitos" />
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard" aria-label="Painel principal" aria-hidden="true">
+      <header class="topbar">
+        <div class="logo" aria-label="Corna">
+          <button id="likeButton" class="logo-mark" type="button" aria-label="Dar like" aria-pressed="false">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+          <span>CORNA</span>
+        </div>
+
+        <div class="top-actions">
+          <div class="mini-clock"><i class="fa-regular fa-clock"></i><span id="dashboardTime">00:00</span></div>
+          <button id="audioButton" class="icon-btn" type="button" aria-label="Reproduzir música">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button id="logoutButton" class="icon-btn" type="button" aria-label="Bloquear">
+            <i class="fa-solid fa-lock"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <section class="hero-card">
+          <div class="hero-copy">
+            <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> Meu espaço</span>
+            <h1>Memórias que<br><em>ficam.</em></h1>
+            <p>Uma coleção pessoal de momentos, música e imagens favoritas.</p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="https://youtu.be/NOh-j5vPLwk?si=hFEb-s1venpJWmMN" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-youtube"></i>
+                Música favorita
+              </a>
+              <a class="secondary-btn" href="#gallery">
+                Ver galeria <i class="fa-solid fa-arrow-down"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hero-orbit" aria-hidden="true">
+            <div class="orbit-ring ring-one"></div>
+            <div class="orbit-ring ring-two"></div>
+            <div class="orbit-heart"><i class="fa-solid fa-heart"></i></div>
+          </div>
+        </section>
+
+        <section class="mood-row" aria-label="Atalhos">
+          <button type="button" class="mood active">❤️ <span>Favoritos</span></button>
+          <button type="button" class="mood">💛 <span>Luz</span></button>
+          <button type="button" class="mood">🧡 <span>Momentos</span></button>
+          <button type="button" class="mood">💙 <span>Calma</span></button>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">MINHA COLEÇÃO</span>
+              <h2>Tudo na vida te ensina alguma coisa.</h2>
+            </div>
+
+          </div>
+
+          <div id="galleryTrack" class="gallery-track" tabindex="0">
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/iDoSy1wVoNl7.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Memória 01" loading="lazy"><span>01</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/0e3nyxthLR66.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bG9yZCUyMG9mJTIwdGhlJTIwcmluZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 02" loading="lazy"><span>02</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/fvTDbeiHAaOc.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Memória 03" loading="lazy"><span>03</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/lrww3GNvJ9iY.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 04" loading="lazy"><span>04</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/i9ao4e7DL89G.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 05" loading="lazy"><span>05</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/P8Xdy32hlZHs.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 06" loading="lazy"><span>06</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/ay8pH7ZSHMbm.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 07" loading="lazy"><span>07</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/8tnmCEaZWiv5.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 08" loading="lazy"><span>08</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/OmicL8kOlLSu.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 09" loading="lazy"><span>09</span></article>
+            <article class="photo-card"><img draggable="false" src="https://xatimg.com/image/xDz3tgJskYA3.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Memória 10" loading="lazy"><span>10</span></article>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <span>CORNA</span>
+          <span>Feito para guardar momentos.</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <div id="likeToast" class="like-toast" role="status" aria-live="polite">
+    <i class="fa-solid fa-heart"></i>
+    <span>Diste like</span>
+  </div>
+
+  <audio id="ambientAudio" src="audio.mp3" preload="metadata" loop></audio>
+  <script src="app.js"></script>
+</body>
+</html>
